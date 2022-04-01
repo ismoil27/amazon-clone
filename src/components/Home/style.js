@@ -11,4 +11,6 @@ const Image = styled.img`
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 `;
 
+Wrapper.Cards = styled.div``;
+
 export { Container, Image, Wrapper };

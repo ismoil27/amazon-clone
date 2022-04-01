@@ -4,3 +4,7 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.product__price {
+  margin-top: 5px;
+}
