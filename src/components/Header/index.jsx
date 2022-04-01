@@ -3,6 +3,8 @@ import "./header.css";
 import logo from "../assets/images/amazon-logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { navbar } from "../../utilities/navbar";
+
 const Header = () => {
   return (
     <div className="header">
@@ -14,20 +16,14 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
-        <div className="nav__tools">
-          <span className="nav__toolsOne">Hello</span>
-          <span className="nav__toolsTwo">Sign in</span>
-        </div>
-
-        <div className="nav__tools">
-          <span className="nav__toolsOne">Return </span>
-          <span className="nav__toolsTwo"> & Orders</span>
-        </div>
-
-        <div className="nav__tools">
-          <span className="nav__toolsOne">Your</span>
-          <span className="nav__toolsTwo">Prime</span>
-        </div>
+        {navbar.map((value) => {
+          return (
+            <div className="nav__tools">
+              <span>{value?.toolOne}</span>
+              <span>{value?.toolTwo}</span>
+            </div>
+          );
+        })}
 
         <div className="header__basket">
           <ShoppingCartIcon />
