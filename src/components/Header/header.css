@@ -26,6 +26,7 @@
   align-items: center;
   border-radius: 24px;
   flex: 1;
+  /* margin: 10px; */
 }
 .header__input {
   height: 35px;
@@ -67,4 +68,9 @@
   color: #fff;
   display: flex;
   align-items: center;
+}
+
+.basket__count {
+  margin-left: 10px;
+  margin-right: 10px;
 }

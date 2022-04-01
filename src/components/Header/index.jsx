@@ -18,7 +18,7 @@ const Header = () => {
       <div className="header__nav">
         {navbar.map((value) => {
           return (
-            <div className="nav__tools">
+            <div key={value.id} className="nav__tools">
               <span>{value?.toolOne}</span>
               <span>{value?.toolTwo}</span>
             </div>
