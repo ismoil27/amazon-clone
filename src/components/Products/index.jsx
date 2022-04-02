@@ -1,10 +1,24 @@
 import { Button } from "@mui/material";
 import React from "react";
 import "./product.css";
-import hoodie from "../assets/images/hoodie 1.jpg";
+// import hoodie from "../assets/images/hoodie 1.jpg";
 import { products } from "../../utilities/products.js";
+import { useStateValue } from "../context/contextProvider";
 
-const Product = ({ image, price, rating }) => {
+const Product = ({ id, image, price, rating }) => {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const addToBasket = () => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id: id,
+        image: image,
+        price: price,
+      },
+    });
+  };
+
   return (
     <div className="product">
       <div className="product__info">
@@ -26,16 +40,17 @@ const Product = ({ image, price, rating }) => {
       </div>
       <img src={image} alt="" />
 
-      <Button
-        variant="primary"
-        sx={{
-          backgroundColor: "#f0c14b",
-          borderColor: "#a88734",
-          marginTop: "10px",
-        }}
+      <button
+        onClick={addToBasket}
+        // variant="primary"
+        // sx={{
+        //   backgroundColor: "#f0c14b",
+        //   borderColor: "#a88734",
+        //   marginTop: "10px",
+        // }}
       >
         Add to Cart
-      </Button>
+      </button>
     </div>
   );
 };
