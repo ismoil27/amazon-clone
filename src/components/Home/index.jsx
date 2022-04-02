@@ -16,18 +16,18 @@ const Home = () => {
       <div className="home__container">
         <img src={landing} alt="" className="home__image" />
         <div className="cards">
-          <Product image={headphone} price="499.00" />
-          <Product image={bottles} price="35.00" />
+          <Product image={headphone} price="499.00" rating={5} />
+          <Product image={bottles} price="35.00" rating={3} />
         </div>
         <div className="cards">
-          <Product image={hoodie} price="240.00" />
-          <Product image={alexa} price="99.00" />
-          <Product image={book} price="19.00" />
+          <Product image={hoodie} price="240.00" rating={4.5} />
+          <Product image={alexa} price="99.00" rating={2} />
+          <Product image={book} price="19.00" rating={5} />
         </div>
         <div className="cards">
-          <Product image={play} price="400.00" />
-          <Product image={play} price="400.00" />
-          <Product image={play} price="400.00" />
+          <Product image={play} price="400.00" rating={1} />
+          <Product image={play} price="400.00" rating={4} />
+          <Product image={play} price="400.00" rating={2} />
         </div>
         <div className="cards">
           <Product image={play} price="400.00" />

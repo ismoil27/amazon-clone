@@ -4,7 +4,7 @@ import "./product.css";
 import hoodie from "../assets/images/hoodie 1.jpg";
 import { products } from "../../utilities/products.js";
 
-const Product = ({ image, price }) => {
+const Product = ({ image, price, rating }) => {
   return (
     <div className="product">
       <div className="product__info">
