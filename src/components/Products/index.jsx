@@ -1,37 +1,35 @@
+import { Button } from "@mui/material";
 import React from "react";
-import { products } from "../../utilities/products";
+import "./product.css";
+import hoodie from "../assets/images/hoodie 1.jpg";
 
-import { Container, ButtonStyle, Wrapper } from "./style";
-
-const Products = () => {
+const Product = () => {
   return (
-    <Container>
-      {products.map((value) => (
-        <Wrapper key={value.id}>
-          <Container.Image src={value?.image} />
-          <Container.Info>
-            <Container.Title>{value.title}</Container.Title>
-            <p className="product__price">
-              <small>$</small>
-              <strong>{value.price}</strong>
-            </p>
-            <Container.Stars>
-              <p>{value?.stars}</p>
-            </Container.Stars>
-            <ButtonStyle
-              variant="contained"
-              sx={{
-                background: "#cd9042",
-                color: "#111",
-              }}
-            >
-              Add to Cart
-            </ButtonStyle>
-          </Container.Info>
-        </Wrapper>
-      ))}
-    </Container>
+    <div className="product">
+      <div className="product__info">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p className="product__price">
+          <span>$</span>
+          <strong> 239.00</strong>
+        </p>
+        <div className="product__rating">
+          <p>🌟</p>
+        </div>
+      </div>
+      <img src={hoodie} alt="" />
+
+      <Button
+        variant="primary"
+        sx={{
+          backgroundColor: "#f0c14b",
+          borderColor: "#a88734",
+          marginTop: "10px",
+        }}
+      >
+        Add to Cart
+      </Button>
+    </div>
   );
 };
 
-export default Products;
+export default Product;
