@@ -8,4 +8,10 @@ export const products = [
     image: hoodie,
     stars: "🌟🌟🌟🌟",
   },
+  // {
+  //   id: 2,
+  //   title: "Macbook Air 13",
+  //   price: 80.0,
+  //   stars: "🌟🌟🌟",
+  // },
 ];
