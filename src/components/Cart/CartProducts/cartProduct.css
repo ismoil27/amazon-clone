@@ -1,0 +1,19 @@
+.cartProduct {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cartProduct__info {
+  padding-left: 20px;
+}
+
+.cartProduct__image {
+  object-fit: contain;
+  width: 180px;
+  height: 180px;
+}
+
+.cartProduct__title {
+  font-size: 17px;
+  font-weight: 800;
+}

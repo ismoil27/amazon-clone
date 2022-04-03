@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 import "./cartProduct.css";
 
@@ -12,6 +13,19 @@ const CartProduct = ({ id, image, title, price, rating }) => {
           <small>$</small>
           <strong>{price}</strong>
         </p>
+        <div className="cartProduct__rating">
+          {/* {(Array(rating).fill(), map((_, i) => <p>🌟</p>))} */}
+        </div>
+        <Button
+          variant="primary"
+          sx={{
+            backgroundColor: "#f0c14b",
+            borderColor: "#a88734",
+            marginTop: "10px",
+          }}
+        >
+          Remove from Cart
+        </Button>
       </div>
     </div>
   );
