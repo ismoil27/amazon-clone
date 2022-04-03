@@ -1,16 +1,19 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "../context/contextProvider";
+import { getBasketTotal } from "../context/reducer";
 import "./total.css";
 
-const Total = () => {
+const Total = (value) => {
+  const [{ basket }] = useStateValue();
+
   return (
     <div className="total">
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              Total (0 item):
-              <strong> {`${value}`} </strong>
+              Total ({basket.length} items): <strong>{value}</strong>
             </p>
             <small className="total__gift">
               <input className="total__input" type="checkbox" /> This order
@@ -19,7 +22,7 @@ const Total = () => {
           </>
         )}
         decimalScale={2}
-        value={0}
+        value={getBasketTotal(basket)}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}

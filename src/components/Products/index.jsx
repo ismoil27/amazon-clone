@@ -40,17 +40,17 @@ const Product = ({ id, image, price, rating }) => {
       </div>
       <img src={image} alt="" />
 
-      <button
+      <Button
         onClick={addToBasket}
-        // variant="primary"
-        // sx={{
-        //   backgroundColor: "#f0c14b",
-        //   borderColor: "#a88734",
-        //   marginTop: "10px",
-        // }}
+        variant="primary"
+        sx={{
+          backgroundColor: "#f0c14b",
+          borderColor: "#a88734",
+          marginTop: "10px",
+        }}
       >
         Add to Cart
-      </button>
+      </Button>
     </div>
   );
 };
