@@ -2,10 +2,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Login from "./components/Login";
+import { auth } from "./firebase";
+import { useStateValue } from "./components/context/contextProvider";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+      } else {
+      }
+    });
+  }, []);
+
   return (
     <Router>
       <Fragment>
