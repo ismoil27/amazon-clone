@@ -3,8 +3,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import "./login.css";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: "#111",
+    backgroundColor: "#f0c14b",
+    marginTop: "10px",
+    "&:hover": {
+      backgroundColor: "#e7af21",
+    },
+  },
+}));
 
 const Login = () => {
+  const classes = useStyles();
   return (
     <div className="login">
       <Link to="/">
@@ -15,17 +28,10 @@ const Login = () => {
 
         <form>
           <h5>Email</h5>
-          <Input sx={{ marginBottom: "10px" }} type="email" />
+          <Input sx={{ marginBottom: "10px", width: "98%" }} type="email" />
           <h5>Password</h5>
-          <Input sx={{ marginBottom: "10px" }} type="password" />
-          <Button
-            variant="primary"
-            sx={{
-              backgroundColor: "#f0c14b",
-              borderColor: "#a88734",
-              marginTop: "10px",
-            }}
-          >
+          <Input sx={{ marginBottom: "10px", width: "98%" }} type="password" />
+          <Button className={classes.root} fullWidth variant="primary">
             Sign in
           </Button>
         </form>
@@ -33,14 +39,7 @@ const Login = () => {
           By creating an account, you agree to Amazon's Conditions of Use and
           Privacy Notice.
         </p>
-        <Button
-          variant="primary"
-          sx={{
-            backgroundColor: "#f0c14b",
-            borderColor: "#a88734",
-            marginTop: "10px",
-          }}
-        >
+        <Button className={classes.root} variant="primary">
           Create your Amazon account
         </Button>
       </div>

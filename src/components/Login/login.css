@@ -22,3 +22,17 @@
   border: 1px solid lightgray;
   padding: 10px;
 }
+
+.login__container > h1 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+h5 {
+  margin-top: 20px;
+}
+
+.login__container > p {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
