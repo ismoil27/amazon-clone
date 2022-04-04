@@ -3,7 +3,7 @@ import "./header.css";
 import logo from "../assets/images/amazon-logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { navbar } from "../../utilities/navbar";
+
 import { Link } from "react-router-dom";
 import { useStateValue } from "../context/contextProvider";
 
@@ -22,14 +22,21 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
-        {navbar.map((value) => {
-          return (
-            <div key={value.id} className="nav__tools">
-              <span>{value?.toolOne}</span>
-              <span>{value?.toolTwo}</span>
-            </div>
-          );
-        })}
+        <Link to="/login">
+          <div className="nav__tools">
+            <span className="optionOne">Hello Guest</span>
+            <span className="optionTwo">Sign In</span>
+          </div>
+        </Link>
+        <div className="nav__tools">
+          <span className="optionOne">Return</span>
+          <span className="optionTwo">& Orders</span>
+        </div>
+        <div className="nav__tools">
+          <span className="optionOne">Your</span>
+          <span className="optionTwo">Prime</span>
+        </div>
+
         <Link to="/basket">
           <div className="header__basket">
             <ShoppingCartIcon />

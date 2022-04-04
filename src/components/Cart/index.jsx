@@ -13,6 +13,7 @@ const Cart = () => {
         <h2 className="cart__title">Shopping Cart</h2>
         {basket.map((value) => (
           <CartProduct
+            key={value.id}
             id={value.id}
             title="AnyCasting Software Co. Ltd., has developed and polished AnyCasting Software – a top tier casting simulation program, over 20 years. Currently we are working with companies manufacturing automobiles"
             price={value.price}

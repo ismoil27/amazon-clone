@@ -1,8 +1,18 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useStateValue } from "../../context/contextProvider";
 import "./cartProduct.css";
 
 const CartProduct = ({ id, image, title, price, rating }) => {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: id,
+    });
+  };
+
   return (
     <div className="cartProduct">
       <img className="cartProduct__image" src={image} alt="" />
@@ -17,6 +27,7 @@ const CartProduct = ({ id, image, title, price, rating }) => {
           {/* {(Array(rating).fill(), map((_, i) => <p>🌟</p>))} */}
         </div>
         <Button
+          onClick={removeFromBasket}
           variant="primary"
           sx={{
             backgroundColor: "#f0c14b",

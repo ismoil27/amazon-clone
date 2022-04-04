@@ -14,6 +14,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
 
           <Route path="/basket" element={<Cart />} />
+          <Route path="/login" element={<Cart />} />
         </Routes>
       </Fragment>
     </Router>
