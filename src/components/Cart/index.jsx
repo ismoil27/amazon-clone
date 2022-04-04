@@ -5,11 +5,12 @@ import "./cart.css";
 import CartProduct from "./CartProducts";
 
 const Cart = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="cart">
       <div className="lists__left">
+        <h3>Hello, {user?.email}</h3>
         <h2 className="cart__title">Shopping Cart</h2>
         {basket.map((value) => (
           <CartProduct
