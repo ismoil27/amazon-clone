@@ -1,11 +1,13 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
+import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../context/contextProvider";
 import { getBasketTotal } from "../context/reducer";
 import "./total.css";
 
 const Total = (value) => {
   const [{ basket }] = useStateValue();
+  const navigate = useNavigate();
 
   return (
     <div className="total">
@@ -27,7 +29,12 @@ const Total = (value) => {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button className="total__btn">Proceed to Checkout</button>
+      <button
+        className="total__btn"
+        onClick={(e) => navigate("/payment__page")}
+      >
+        Proceed to Checkout
+      </button>
     </div>
   );
 };

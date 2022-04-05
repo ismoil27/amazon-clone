@@ -6,6 +6,7 @@ import { Fragment, useEffect } from "react";
 import Login from "./components/Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./components/context/contextProvider";
+import Payment from "./components/Payment";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/basket" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/payment__page" element={<Payment />} />
         </Routes>
       </Fragment>
     </Router>
