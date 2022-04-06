@@ -7,7 +7,12 @@ import Login from "./components/Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./components/context/contextProvider";
 import Payment from "./components/Payment";
-import { Elements } from "@stripe/react-stripe-js";
+import {
+  CardElement,
+  Elements,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
 const promise = loadStripe(
@@ -16,6 +21,9 @@ const promise = loadStripe(
 
 function App() {
   const [{}, dispatch] = useStateValue();
+
+  const stripe = useStripe();
+  const element = useElements();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
