@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { CardElement } from "@stripe/react-stripe-js";
 import React from "react";
 import CurrencyFormat from "react-currency-format";
@@ -6,9 +7,22 @@ import CartProduct from "../Cart/CartProducts";
 import { useStateValue } from "../context/contextProvider";
 import { getBasketTotal } from "../context/reducer";
 import "./payment.css";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: "#111",
+    backgroundColor: "#f0c14b",
+    marginTop: "10px",
+    "&:hover": {
+      backgroundColor: "#e7af21",
+    },
+  },
+}));
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
+  const classes = useStyles();
 
   return (
     <div className="payment">
@@ -61,6 +75,10 @@ const Payment = () => {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
+
+                <Button className={classes.root} variant="primary">
+                  Buy Now
+                </Button>
               </div>
             </form>
           </div>
