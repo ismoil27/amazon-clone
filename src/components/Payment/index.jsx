@@ -1,7 +1,10 @@
+import { CardElement } from "@stripe/react-stripe-js";
 import React from "react";
+import CurrencyFormat from "react-currency-format";
 import { Link } from "react-router-dom";
 import CartProduct from "../Cart/CartProducts";
 import { useStateValue } from "../context/contextProvider";
+import { getBasketTotal } from "../context/reducer";
 import "./payment.css";
 
 const Payment = () => {
@@ -45,6 +48,21 @@ const Payment = () => {
         <div className="payment__section">
           <div className="payment__title">
             <h3>Payment Method</h3>
+          </div>
+          <div className="payment__details">
+            <form>
+              <CardElement />
+              <div className="payment__priceContainer">
+                <CurrencyFormat
+                  renderText={(value) => <h3>Order Total: {value}</h3>}
+                  decimalScale={2}
+                  value={getBasketTotal(basket)}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                />
+              </div>
+            </form>
           </div>
         </div>
       </div>
